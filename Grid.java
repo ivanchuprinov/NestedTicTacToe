@@ -1,5 +1,5 @@
 public class Grid implements Gridable{
-    Gridable[] array;
+    Cell[] array;
     char value = '\0';
 
     /**
@@ -7,19 +7,19 @@ public class Grid implements Gridable{
      */
     public Grid()
     {
-        array = new Gridable[9];
+        array = new Cell[9];
     }
 
     /**
      * Fills the grid with new grids
      */
-    public void fillGrids()
+    /*public void fillGrids()
     {
         for(int i = 0; i<array.length; i++)
         {
             array[i] = new Grid();
         }
-    }
+    }*/
 
     /**
      * Fills the grid with new cells
@@ -41,7 +41,7 @@ public class Grid implements Gridable{
     {
         if(value == '\0')
         {
-            int x = Player.choose(array);
+            int x = curPlayer.pick(this);
             return array[x].pick(c);
         }
         else
